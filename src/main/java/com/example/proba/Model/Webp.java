@@ -1,0 +1,37 @@
+package com.example.proba.Model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Webp{
+
+	@JsonProperty("large_image_url")
+	private String largeImageUrl;
+
+	@JsonProperty("small_image_url")
+	private String smallImageUrl;
+
+	@JsonProperty("image_url")
+	private String imageUrl;
+
+	public String getLargeImageUrl(){
+		return largeImageUrl;
+	}
+
+	public String getSmallImageUrl(){
+		return smallImageUrl;
+	}
+
+	public String getImageUrl(){
+		return imageUrl;
+	}
+
+	@Override
+ 	public String toString(){
+		return 
+			"Webp{" + 
+			"large_image_url = '" + largeImageUrl + '\'' + 
+			",small_image_url = '" + smallImageUrl + '\'' + 
+			",image_url = '" + imageUrl + '\'' + 
+			"}";
+		}
+}

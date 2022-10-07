@@ -6,8 +6,10 @@ module com.example.proba {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
-    requires eu.hansolo.tilesfx;
+    //requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires com.fasterxml.jackson.annotation;
+    requires com.fasterxml.jackson.databind;
 
     opens com.example.proba to javafx.fxml;
     exports com.example.proba;
