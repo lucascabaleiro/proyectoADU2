@@ -9,6 +9,7 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <Label text="Introduce la ID" />
+   <TextField fx:id="text1" />
     <Button onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="34.0" text="Ok" />
    <TableView fx:id="table1" prefHeight="200.0" prefWidth="200.0">
      <columns>
