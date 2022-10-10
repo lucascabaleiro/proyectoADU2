@@ -1,4 +1,4 @@
-package com.example.proba;
+package com.example.proba.Controller;
 
 import com.example.proba.Model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;

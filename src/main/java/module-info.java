@@ -13,4 +13,8 @@ module com.example.proba {
 
     opens com.example.proba to javafx.fxml;
     exports com.example.proba;
+    exports com.example.proba.Model;
+    opens com.example.proba.Model;
+    exports com.example.proba.Controller;
+    opens com.example.proba.Controller to javafx.fxml;
 }
