@@ -31,15 +31,4 @@ public class ProducersItem{
 	public String getUrl(){
 		return url;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"ProducersItem{" + 
-			"name = '" + name + '\'' + 
-			",mal_id = '" + malId + '\'' + 
-			",type = '" + type + '\'' + 
-			",url = '" + url + '\'' + 
-			"}";
-		}
 }

@@ -31,15 +31,4 @@ public class GenresItem{
 	public String getUrl(){
 		return url;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"GenresItem{" + 
-			"name = '" + name + '\'' + 
-			",mal_id = '" + malId + '\'' + 
-			",type = '" + type + '\'' + 
-			",url = '" + url + '\'' + 
-			"}";
-		}
 }

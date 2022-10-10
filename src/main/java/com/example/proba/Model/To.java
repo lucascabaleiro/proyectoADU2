@@ -5,33 +5,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class To{
 
 	@JsonProperty("month")
-	private int month;
+	private Object month;
 
 	@JsonProperty("year")
-	private int year;
+	private Object year;
 
 	@JsonProperty("day")
-	private int day;
+	private Object day;
 
-	public int getMonth(){
+	public Object getMonth(){
 		return month;
 	}
 
-	public int getYear(){
+	public Object getYear(){
 		return year;
 	}
 
-	public int getDay(){
+	public Object getDay(){
 		return day;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"To{" + 
-			"month = '" + month + '\'' + 
-			",year = '" + year + '\'' + 
-			",day = '" + day + '\'' + 
-			"}";
-		}
 }

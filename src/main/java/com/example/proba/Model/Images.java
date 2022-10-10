@@ -11,19 +11,19 @@ public class Images{
 	private Webp webp;
 
 	@JsonProperty("large_image_url")
-	private String largeImageUrl;
+	private Object largeImageUrl;
 
 	@JsonProperty("small_image_url")
-	private String smallImageUrl;
+	private Object smallImageUrl;
 
 	@JsonProperty("image_url")
-	private String imageUrl;
+	private Object imageUrl;
 
 	@JsonProperty("medium_image_url")
-	private String mediumImageUrl;
+	private Object mediumImageUrl;
 
 	@JsonProperty("maximum_image_url")
-	private String maximumImageUrl;
+	private Object maximumImageUrl;
 
 	public Jpg getJpg(){
 		return jpg;
@@ -33,37 +33,23 @@ public class Images{
 		return webp;
 	}
 
-	public String getLargeImageUrl(){
+	public Object getLargeImageUrl(){
 		return largeImageUrl;
 	}
 
-	public String getSmallImageUrl(){
+	public Object getSmallImageUrl(){
 		return smallImageUrl;
 	}
 
-	public String getImageUrl(){
+	public Object getImageUrl(){
 		return imageUrl;
 	}
 
-	public String getMediumImageUrl(){
+	public Object getMediumImageUrl(){
 		return mediumImageUrl;
 	}
 
-	public String getMaximumImageUrl(){
+	public Object getMaximumImageUrl(){
 		return maximumImageUrl;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Images{" + 
-			"jpg = '" + jpg + '\'' + 
-			",webp = '" + webp + '\'' + 
-			",large_image_url = '" + largeImageUrl + '\'' + 
-			",small_image_url = '" + smallImageUrl + '\'' + 
-			",image_url = '" + imageUrl + '\'' + 
-			",medium_image_url = '" + mediumImageUrl + '\'' + 
-			",maximum_image_url = '" + maximumImageUrl + '\'' + 
-			"}";
-		}
 }

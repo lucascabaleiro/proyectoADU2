@@ -8,38 +8,27 @@ public class Trailer{
 	private Images images;
 
 	@JsonProperty("embed_url")
-	private String embedUrl;
+	private Object embedUrl;
 
 	@JsonProperty("youtube_id")
-	private String youtubeId;
+	private Object youtubeId;
 
 	@JsonProperty("url")
-	private String url;
+	private Object url;
 
 	public Images getImages(){
 		return images;
 	}
 
-	public String getEmbedUrl(){
+	public Object getEmbedUrl(){
 		return embedUrl;
 	}
 
-	public String getYoutubeId(){
+	public Object getYoutubeId(){
 		return youtubeId;
 	}
 
-	public String getUrl(){
+	public Object getUrl(){
 		return url;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Trailer{" + 
-			"images = '" + images + '\'' + 
-			",embed_url = '" + embedUrl + '\'' + 
-			",youtube_id = '" + youtubeId + '\'' + 
-			",url = '" + url + '\'' + 
-			"}";
-		}
 }

@@ -24,14 +24,4 @@ public class Webp{
 	public String getImageUrl(){
 		return imageUrl;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Webp{" + 
-			"large_image_url = '" + largeImageUrl + '\'' + 
-			",small_image_url = '" + smallImageUrl + '\'' + 
-			",image_url = '" + imageUrl + '\'' + 
-			"}";
-		}
 }

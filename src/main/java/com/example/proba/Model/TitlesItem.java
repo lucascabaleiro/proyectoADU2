@@ -17,13 +17,4 @@ public class TitlesItem{
 	public String getTitle(){
 		return title;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"TitlesItem{" + 
-			"type = '" + type + '\'' + 
-			",title = '" + title + '\'' + 
-			"}";
-		}
 }

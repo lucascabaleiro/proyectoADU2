@@ -3,7 +3,7 @@ package com.example.proba.Model;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Data{
+public class DataItem{
 
 	@JsonProperty("title_japanese")
 	private String titleJapanese;
@@ -15,16 +15,16 @@ public class Data{
 	private Broadcast broadcast;
 
 	@JsonProperty("year")
-	private int year;
+	private Object year;
 
 	@JsonProperty("rating")
 	private String rating;
 
 	@JsonProperty("scored_by")
-	private int scoredBy;
+	private Object scoredBy;
 
 	@JsonProperty("title_synonyms")
-	private List<String> titleSynonyms;
+	private List<Object> titleSynonyms;
 
 	@JsonProperty("source")
 	private String source;
@@ -42,7 +42,7 @@ public class Data{
 	private String duration;
 
 	@JsonProperty("score")
-	private double score;
+	private Object score;
 
 	@JsonProperty("themes")
 	private List<ThemesItem> themes;
@@ -66,7 +66,7 @@ public class Data{
 	private int rank;
 
 	@JsonProperty("season")
-	private String season;
+	private Object season;
 
 	@JsonProperty("airing")
 	private boolean airing;
@@ -81,7 +81,7 @@ public class Data{
 	private Images images;
 
 	@JsonProperty("studios")
-	private List<StudiosItem> studios;
+	private List<Object> studios;
 
 	@JsonProperty("mal_id")
 	private int malId;
@@ -90,22 +90,22 @@ public class Data{
 	private List<TitlesItem> titles;
 
 	@JsonProperty("synopsis")
-	private String synopsis;
+	private Object synopsis;
 
 	@JsonProperty("explicit_genres")
 	private List<Object> explicitGenres;
 
 	@JsonProperty("licensors")
-	private List<LicensorsItem> licensors;
+	private List<Object> licensors;
 
 	@JsonProperty("url")
 	private String url;
 
 	@JsonProperty("producers")
-	private List<ProducersItem> producers;
+	private List<Object> producers;
 
 	@JsonProperty("background")
-	private String background;
+	private Object background;
 
 	@JsonProperty("status")
 	private String status;
@@ -125,7 +125,7 @@ public class Data{
 		return broadcast;
 	}
 
-	public int getYear(){
+	public Object getYear(){
 		return year;
 	}
 
@@ -133,11 +133,11 @@ public class Data{
 		return rating;
 	}
 
-	public int getScoredBy(){
+	public Object getScoredBy(){
 		return scoredBy;
 	}
 
-	public List<String> getTitleSynonyms(){
+	public List<Object> getTitleSynonyms(){
 		return titleSynonyms;
 	}
 
@@ -161,7 +161,7 @@ public class Data{
 		return duration;
 	}
 
-	public double getScore(){
+	public Object getScore(){
 		return score;
 	}
 
@@ -193,7 +193,7 @@ public class Data{
 		return rank;
 	}
 
-	public String getSeason(){
+	public Object getSeason(){
 		return season;
 	}
 
@@ -213,7 +213,7 @@ public class Data{
 		return images;
 	}
 
-	public List<StudiosItem> getStudios(){
+	public List<Object> getStudios(){
 		return studios;
 	}
 
@@ -225,7 +225,7 @@ public class Data{
 		return titles;
 	}
 
-	public String getSynopsis(){
+	public Object getSynopsis(){
 		return synopsis;
 	}
 
@@ -233,7 +233,7 @@ public class Data{
 		return explicitGenres;
 	}
 
-	public List<LicensorsItem> getLicensors(){
+	public List<Object> getLicensors(){
 		return licensors;
 	}
 
@@ -241,11 +241,11 @@ public class Data{
 		return url;
 	}
 
-	public List<ProducersItem> getProducers(){
+	public List<Object> getProducers(){
 		return producers;
 	}
 
-	public String getBackground(){
+	public Object getBackground(){
 		return background;
 	}
 
@@ -256,47 +256,4 @@ public class Data{
 	public List<DemographicsItem> getDemographics(){
 		return demographics;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Data{" + 
-			"title_japanese = '" + titleJapanese + '\'' + 
-			",favorites = '" + favorites + '\'' + 
-			",broadcast = '" + broadcast + '\'' + 
-			",year = '" + year + '\'' + 
-			",rating = '" + rating + '\'' + 
-			",scored_by = '" + scoredBy + '\'' + 
-			",title_synonyms = '" + titleSynonyms + '\'' + 
-			",source = '" + source + '\'' + 
-			",title = '" + title + '\'' + 
-			",type = '" + type + '\'' + 
-			",trailer = '" + trailer + '\'' + 
-			",duration = '" + duration + '\'' + 
-			",score = '" + score + '\'' + 
-			",themes = '" + themes + '\'' + 
-			",approved = '" + approved + '\'' + 
-			",genres = '" + genres + '\'' + 
-			",popularity = '" + popularity + '\'' + 
-			",members = '" + members + '\'' + 
-			",title_english = '" + titleEnglish + '\'' + 
-			",rank = '" + rank + '\'' + 
-			",season = '" + season + '\'' + 
-			",airing = '" + airing + '\'' + 
-			",episodes = '" + episodes + '\'' + 
-			",aired = '" + aired + '\'' + 
-			",images = '" + images + '\'' + 
-			",studios = '" + studios + '\'' + 
-			",mal_id = '" + malId + '\'' + 
-			",titles = '" + titles + '\'' + 
-			",synopsis = '" + synopsis + '\'' + 
-			",explicit_genres = '" + explicitGenres + '\'' + 
-			",licensors = '" + licensors + '\'' + 
-			",url = '" + url + '\'' + 
-			",producers = '" + producers + '\'' + 
-			",background = '" + background + '\'' + 
-			",status = '" + status + '\'' + 
-			",demographics = '" + demographics + '\'' + 
-			"}";
-		}
 }

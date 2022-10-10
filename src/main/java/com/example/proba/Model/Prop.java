@@ -17,13 +17,4 @@ public class Prop{
 	public To getTo(){
 		return to;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Prop{" + 
-			"from = '" + from + '\'' + 
-			",to = '" + to + '\'' + 
-			"}";
-		}
 }

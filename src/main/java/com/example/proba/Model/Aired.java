@@ -14,7 +14,7 @@ public class Aired{
 	private String from;
 
 	@JsonProperty("to")
-	private String to;
+	private Object to;
 
 	public String getString(){
 		return string;
@@ -28,18 +28,7 @@ public class Aired{
 		return from;
 	}
 
-	public String getTo(){
+	public Object getTo(){
 		return to;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Aired{" + 
-			"string = '" + string + '\'' + 
-			",prop = '" + prop + '\'' + 
-			",from = '" + from + '\'' + 
-			",to = '" + to + '\'' + 
-			"}";
-		}
 }

@@ -5,41 +5,30 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Broadcast{
 
 	@JsonProperty("string")
-	private String string;
+	private Object string;
 
 	@JsonProperty("timezone")
-	private String timezone;
+	private Object timezone;
 
 	@JsonProperty("time")
-	private String time;
+	private Object time;
 
 	@JsonProperty("day")
-	private String day;
+	private Object day;
 
-	public String getString(){
+	public Object getString(){
 		return string;
 	}
 
-	public String getTimezone(){
+	public Object getTimezone(){
 		return timezone;
 	}
 
-	public String getTime(){
+	public Object getTime(){
 		return time;
 	}
 
-	public String getDay(){
+	public Object getDay(){
 		return day;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Broadcast{" + 
-			"string = '" + string + '\'' + 
-			",timezone = '" + timezone + '\'' + 
-			",time = '" + time + '\'' + 
-			",day = '" + day + '\'' + 
-			"}";
-		}
 }

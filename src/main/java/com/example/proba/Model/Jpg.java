@@ -24,14 +24,4 @@ public class Jpg{
 	public String getImageUrl(){
 		return imageUrl;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"Jpg{" + 
-			"large_image_url = '" + largeImageUrl + '\'' + 
-			",small_image_url = '" + smallImageUrl + '\'' + 
-			",image_url = '" + imageUrl + '\'' + 
-			"}";
-		}
 }

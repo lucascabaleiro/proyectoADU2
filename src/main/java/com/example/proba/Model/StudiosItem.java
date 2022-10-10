@@ -31,15 +31,4 @@ public class StudiosItem{
 	public String getUrl(){
 		return url;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"StudiosItem{" + 
-			"name = '" + name + '\'' + 
-			",mal_id = '" + malId + '\'' + 
-			",type = '" + type + '\'' + 
-			",url = '" + url + '\'' + 
-			"}";
-		}
 }

@@ -24,14 +24,4 @@ public class From{
 	public int getDay(){
 		return day;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"From{" + 
-			"month = '" + month + '\'' + 
-			",year = '" + year + '\'' + 
-			",day = '" + day + '\'' + 
-			"}";
-		}
 }

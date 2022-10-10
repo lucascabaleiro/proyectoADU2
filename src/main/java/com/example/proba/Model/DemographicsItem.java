@@ -31,15 +31,4 @@ public class DemographicsItem{
 	public String getUrl(){
 		return url;
 	}
-
-	@Override
- 	public String toString(){
-		return 
-			"DemographicsItem{" + 
-			"name = '" + name + '\'' + 
-			",mal_id = '" + malId + '\'' + 
-			",type = '" + type + '\'' + 
-			",url = '" + url + '\'' + 
-			"}";
-		}
 }

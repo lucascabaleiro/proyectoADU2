@@ -3,14 +3,16 @@ package com.example.proba.Controller;
 import com.example.proba.Model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Paths;
 
 public class HelloController {
     @FXML
@@ -26,17 +28,25 @@ public class HelloController {
     @FXML
     private TextField text1;
     @FXML
+    private Button btnvolver;
+    @FXML
     protected void onHelloButtonClick() throws IOException {
         table1.getItems().clear();
-        String id = text1.getText();
-        String url = "https://api.jikan.moe/v4/anime/" + id;
-        URL jsonURL = new URL(url);
-        ObjectMapper objectMapper = new ObjectMapper();
-        Response response = objectMapper.readValue(jsonURL, Response.class);
         c1.setCellValueFactory(new PropertyValueFactory<>("title"));
         c2.setCellValueFactory(new PropertyValueFactory<>("score"));
         c3.setCellValueFactory(new PropertyValueFactory<>("popularity"));
-        table1.getItems().add(response.getData());
+        String nombre = text1.getText();
+        String url = "https://api.jikan.moe/v4/anime?q=" + nombre;
+        URL jsonURL = new URL(url);
+        ObjectMapper objectMapper = new ObjectMapper();
+        Response res = objectMapper.readValue(jsonURL, Response.class);
+        for (byte i = 0; i < res.getData().size(); i++) {
+            table1.getItems().add(res.getData().get(i));
+        }
+
+    }
+    @FXML
+    protected  void onbntDetallesClick() throws IOException {
 
     }
 }
