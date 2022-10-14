@@ -1,8 +1,9 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
 
-public class Broadcast{
+public class Broadcast implements Serializable{
 
 	@JsonProperty("string")
 	private Object string;

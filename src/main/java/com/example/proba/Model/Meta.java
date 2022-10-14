@@ -2,8 +2,8 @@ package com.example.proba.Model;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Meta{
+import java.io.Serializable;
+public class Meta implements Serializable{
 
 	@JsonProperty("path")
 	private String path;

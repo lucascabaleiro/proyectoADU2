@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Pagination{
+import java.io.Serializable;
+public class Pagination implements Serializable{
 
 	@JsonProperty("has_next_page")
 	private boolean hasNextPage;

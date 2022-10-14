@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Jpg{
+import java.io.Serializable;
+public class Jpg implements Serializable{
 
 	@JsonProperty("large_image_url")
 	private String largeImageUrl;

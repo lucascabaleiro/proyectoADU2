@@ -2,8 +2,8 @@ package com.example.proba.Model;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Response{
+import java.io.Serializable;
+public class Response implements Serializable{
 
 	@JsonProperty("pagination")
 	private Pagination pagination;

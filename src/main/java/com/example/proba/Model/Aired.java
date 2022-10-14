@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Aired{
+import java.io.Serializable;
+public class Aired implements Serializable{
 
 	@JsonProperty("string")
 	private String string;

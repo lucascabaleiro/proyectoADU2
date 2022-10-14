@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class LinksItem{
+import java.io.Serializable;
+public class LinksItem implements Serializable{
 
 	@JsonProperty("active")
 	private boolean active;

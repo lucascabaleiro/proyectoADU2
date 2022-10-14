@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Prop{
+import java.io.Serializable;
+public class Prop implements Serializable{
 
 	@JsonProperty("from")
 	private From from;

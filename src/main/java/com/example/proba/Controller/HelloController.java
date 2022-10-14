@@ -10,7 +10,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.nio.file.Paths;
 
@@ -50,7 +52,21 @@ public class HelloController {
     @FXML
     protected void onBtnJsonClick() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        DataItem r = (DataItem)table1.getSelectionModel().getSelectedItem();
-        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),r);
+        DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
+        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);
+    }
+    @FXML
+    protected  void onBtnBinarioClick() throws  IOException {
+        ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".bin"));
+        DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
+        escritor.writeObject(anime);
+        escritor.close();
+    }
+    @FXML
+    protected void onBtnTextoClick() throws IOException {
+        ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".txt"));
+        DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
+        escritor.writeObject(anime);
+        escritor.close();
     }
 }

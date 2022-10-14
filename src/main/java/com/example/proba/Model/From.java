@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class From{
+import java.io.Serializable;
+public class From implements Serializable{
 
 	@JsonProperty("month")
 	private int month;

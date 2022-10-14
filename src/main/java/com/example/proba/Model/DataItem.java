@@ -2,8 +2,9 @@ package com.example.proba.Model;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
 
-public class DataItem{
+public class DataItem implements Serializable{
 
 	@JsonProperty("title_japanese")
 	private String titleJapanese;

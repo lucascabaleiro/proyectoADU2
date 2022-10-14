@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Items{
+import java.io.Serializable;
+public class Items implements Serializable{
 
 	@JsonProperty("per_page")
 	private int perPage;

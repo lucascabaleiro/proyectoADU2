@@ -26,9 +26,9 @@
    <Pane prefHeight="100.0" prefWidth="200.0">
       <children>
          <Button fx:id="btnJson" layoutX="100.0" mnemonicParsing="false" onAction="#onBtnJsonClick" text="JSON" />
-         <Button layoutX="200.0" mnemonicParsing="false" text="XML" />
-         <Button layoutX="300.0" mnemonicParsing="false" text="Binario" />
-         <Button layoutX="400.0" mnemonicParsing="false" text="Texto" />
+         <Button fx:id="onBtnXmlClick" layoutX="200.0" mnemonicParsing="false" text="XML" />
+         <Button fx:id="btnBinario" layoutX="300.0" mnemonicParsing="false" onAction="#onBtnBinarioClick" text="Binario" />
+         <Button fx:id="btnTexto" layoutX="400.0" mnemonicParsing="false" onAction="#onBtnTextoClick" text="Texto" />
       </children>
    </Pane>
 </VBox>

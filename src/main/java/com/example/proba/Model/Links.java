@@ -1,8 +1,8 @@
 package com.example.proba.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Links{
+import java.io.Serializable;
+public class Links implements Serializable{
 
 	@JsonProperty("next")
 	private String next;
