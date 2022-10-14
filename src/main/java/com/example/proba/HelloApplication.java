@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
         stage.show();*/
         Parent root = FXMLLoader.load(getClass().getResource("mainview.fxml"));
         stage.setTitle("Nombre anime");
-        stage.setScene(new Scene(root, 500, 400));
+        stage.setScene(new Scene(root, 600, 500));
         stage.show();
     }
 

@@ -4,11 +4,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="396.0" prefWidth="636.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proba.Controller.HelloController">
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proba.Controller.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <Label text="Introduce la ID" />
+   <Label text="Introduce el nombre del anime" />
    <TextField fx:id="text1" />
     <Button onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="34.0" text="Ok" />
    <TableView fx:id="table1" prefHeight="200.0" prefWidth="200.0">
@@ -21,5 +21,14 @@
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
       </columnResizePolicy>
    </TableView>
-   <Button fx:id="btndetalles" mnemonicParsing="false" onAction="#onbntDetallesClick" text="Detalles" />
+   <Label text="Introduce el nombre del archivo que queires crear" />
+   <TextField fx:id="text2" />
+   <Pane prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button fx:id="btnJson" layoutX="100.0" mnemonicParsing="false" onAction="#onBtnJsonClick" text="JSON" />
+         <Button layoutX="200.0" mnemonicParsing="false" text="XML" />
+         <Button layoutX="300.0" mnemonicParsing="false" text="Binario" />
+         <Button layoutX="400.0" mnemonicParsing="false" text="Texto" />
+      </children>
+   </Pane>
 </VBox>

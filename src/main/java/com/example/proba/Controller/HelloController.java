@@ -28,7 +28,9 @@ public class HelloController {
     @FXML
     private TextField text1;
     @FXML
-    private Button btnvolver;
+    private Button btnJson;
+    @FXML
+    private TextField text2;
     @FXML
     protected void onHelloButtonClick() throws IOException {
         table1.getItems().clear();
@@ -46,7 +48,9 @@ public class HelloController {
 
     }
     @FXML
-    protected  void onbntDetallesClick() throws IOException {
-
+    protected void onBtnJsonClick() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        DataItem r = (DataItem)table1.getSelectionModel().getSelectedItem();
+        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),r);
     }
 }
