@@ -39,7 +39,7 @@ public class HelloController {
     private TextField text2;
     @FXML
     protected void onHelloButtonClick() throws IOException {
-        table1.getItems().clear();
+        /*table1.getItems().clear();
         c1.setCellValueFactory(new PropertyValueFactory<>("title"));
         c2.setCellValueFactory(new PropertyValueFactory<>("score"));
         c3.setCellValueFactory(new PropertyValueFactory<>("popularity"));
@@ -50,38 +50,46 @@ public class HelloController {
         Response res = objectMapper.readValue(jsonURL, Response.class);
         for (byte i = 0; i < res.getData().size(); i++) {
             table1.getItems().add(res.getData().get(i));
-        }
+        }*/
+        table1.getItems().clear();
         try {
+            String nombre = text1.getText();
+            String consulta = "select * from animes where titulo rlike '" + nombre + "'";
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/anime", "root", "root");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from animes");
+            ResultSet resultSet = statement.executeQuery(consulta);
 
             while (resultSet.next()) {
-                System.out.println(resultSet.getString("titulo"));
+                c1.setCellValueFactory(new PropertyValueFactory<>("titulo"));
+                c2.setCellValueFactory(new PropertyValueFactory<>("valoracion"));
+                c3.setCellValueFactory(new PropertyValueFactory<>("popularidad"));
+                table1.getItems().add(new Anime(resultSet.getString("titulo"),resultSet.getFloat("valoracion"),resultSet.getInt("popularidad")));
+                System.out.println(resultSet.getString("popularidad"));
             }
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
     @FXML
     protected void onBtnJsonClick() throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
+        /*ObjectMapper mapper = new ObjectMapper();
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
-        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);
+        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);*/
     }
     @FXML
     protected  void onBtnBinarioClick() throws  IOException {
-        ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".bin"));
+       /* ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".bin"));
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
         escritor.writeObject(anime);
-        escritor.close();
+        escritor.close();*/
     }
     @FXML
     protected void onBtnTextoClick() throws IOException {
-        ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".txt"));
+        /*ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".txt"));
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
         escritor.writeObject(anime);
-        escritor.close();
+        escritor.close();*/
     }
 }
