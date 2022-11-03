@@ -10,6 +10,7 @@ module com.example.proba {
     requires com.almasb.fxgl.all;
     requires com.fasterxml.jackson.annotation;
     requires com.fasterxml.jackson.databind;
+    requires java.sql;
 
     opens com.example.proba to javafx.fxml;
     exports com.example.proba;

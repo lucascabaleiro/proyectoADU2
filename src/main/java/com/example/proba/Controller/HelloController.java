@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class HelloController {
     @FXML
@@ -47,7 +51,18 @@ public class HelloController {
         for (byte i = 0; i < res.getData().size(); i++) {
             table1.getItems().add(res.getData().get(i));
         }
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/anime", "root", "root");
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from animes");
 
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("titulo"));
+            }
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     @FXML
     protected void onBtnJsonClick() throws IOException {
