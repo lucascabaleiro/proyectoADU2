@@ -3,8 +3,12 @@ package com.example.proba.Controller;
 import com.example.proba.Model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -28,6 +32,8 @@ public class Controller {
     private TextField text1;
     @FXML
     private Button btnJson;
+    @FXML
+    private Button btnBinario;
     @FXML
     private TextField text2;
     @FXML
@@ -76,6 +82,9 @@ public class Controller {
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
         escritor.writeObject(anime);
         escritor.close();*/
+        Parent root = FXMLLoader.load(getClass().getResource("viewborrar.fxml"));
+        Stage stage = (Stage) btnBinario.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 500));
     }
     @FXML
     protected void onBtnTextoClick() throws IOException {
