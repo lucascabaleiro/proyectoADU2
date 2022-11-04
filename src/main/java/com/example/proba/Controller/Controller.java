@@ -3,24 +3,17 @@ package com.example.proba.Controller;
 import com.example.proba.Model.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.net.URL;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class HelloController {
+public class Controller {
     @FXML
     private Label welcomeText;
     @FXML
@@ -64,7 +57,6 @@ public class HelloController {
                 c2.setCellValueFactory(new PropertyValueFactory<>("valoracion"));
                 c3.setCellValueFactory(new PropertyValueFactory<>("popularidad"));
                 table1.getItems().add(new Anime(resultSet.getString("titulo"),resultSet.getFloat("valoracion"),resultSet.getInt("popularidad")));
-                System.out.println(resultSet.getString("popularidad"));
             }
             connection.close();
         } catch (Exception e) {
@@ -74,9 +66,9 @@ public class HelloController {
     }
     @FXML
     protected void onBtnJsonClick() throws IOException {
-        /*ObjectMapper mapper = new ObjectMapper();
-        DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
-        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);*/
+        ObjectMapper mapper = new ObjectMapper();
+        Anime anime = (Anime)table1.getSelectionModel().getSelectedItem();
+        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);
     }
     @FXML
     protected  void onBtnBinarioClick() throws  IOException {
