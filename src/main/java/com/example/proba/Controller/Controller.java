@@ -82,7 +82,7 @@ public class Controller {
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
         escritor.writeObject(anime);
         escritor.close();*/
-        Parent root = FXMLLoader.load(getClass().getResource("viewborrar.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../resources/com.example.proba/viewborrar.fxml"));
         Stage stage = (Stage) btnBinario.getScene().getWindow();
         stage.setScene(new Scene(root, 600, 500));
     }
