@@ -37,8 +37,6 @@ public class Controller {
     @FXML
     private Button btnBorrar;
     @FXML
-    private TextField text2;
-    @FXML
     protected void onBtnOkClick() throws IOException {
         /*table1.getItems().clear();
         c1.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -74,9 +72,10 @@ public class Controller {
     }
     @FXML
     protected void onBtnExportarClick() throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
+        /*ObjectMapper mapper = new ObjectMapper();
         Anime anime = (Anime)table1.getSelectionModel().getSelectedItem();
-        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);
+        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);*/
+
     }
     @FXML
     protected  void onBtnBorrarClick() throws  IOException {
@@ -106,5 +105,8 @@ public class Controller {
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
         escritor.writeObject(anime);
         escritor.close();*/
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/viewanadir.fxml"));
+        Stage stage = (Stage) btnAnadir.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 500));
     }
 }

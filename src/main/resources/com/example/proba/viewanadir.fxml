@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.proba.Viewanadir"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proba.Controller.Controller">
+   <children>
+      <Label layoutX="46.0" layoutY="44.0" text="Titulo" />
+      <Label layoutX="47.0" layoutY="82.0" text="Valoración" />
+      <Label layoutX="47.0" layoutY="124.0" text="Ranking popularidad" />
+      <TextField fx:id="textTitulo" layoutX="92.0" layoutY="40.0" prefHeight="25.0" prefWidth="331.0" />
+      <TextField fx:id="textVal" layoutX="115.0" layoutY="78.0" prefHeight="25.0" prefWidth="305.0" />
+      <TextField fx:id="textPop" layoutX="170.0" layoutY="120.0" prefHeight="25.0" prefWidth="252.0" />
+   </children>
 </AnchorPane>
