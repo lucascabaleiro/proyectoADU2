@@ -10,7 +10,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -31,13 +33,13 @@ public class Controller {
     @FXML
     private TextField text1;
     @FXML
-    private Button btnJson;
+    private Button btnAnadir;
     @FXML
-    private Button btnBinario;
+    private Button btnBorrar;
     @FXML
     private TextField text2;
     @FXML
-    protected void onHelloButtonClick() throws IOException {
+    protected void onBtnOkClick() throws IOException {
         /*table1.getItems().clear();
         c1.setCellValueFactory(new PropertyValueFactory<>("title"));
         c2.setCellValueFactory(new PropertyValueFactory<>("score"));
@@ -71,23 +73,35 @@ public class Controller {
 
     }
     @FXML
-    protected void onBtnJsonClick() throws IOException {
+    protected void onBtnExportarClick() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         Anime anime = (Anime)table1.getSelectionModel().getSelectedItem();
         mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);
     }
     @FXML
-    protected  void onBtnBinarioClick() throws  IOException {
+    protected  void onBtnBorrarClick() throws  IOException {
        /* ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".bin"));
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
         escritor.writeObject(anime);
         escritor.close();*/
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/com.example.proba/viewborrar.fxml"));
-        Stage stage = (Stage) btnBinario.getScene().getWindow();
-        stage.setScene(new Scene(root, 600, 500));
+        /*Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/viewborrar.fxml"));
+        Stage stage = (Stage) btnBorrar.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 500));*/
+        try {
+            Anime anime = (Anime) table1.getSelectionModel().getSelectedItem();
+            String nombre = anime.getTitulo();
+            String consulta = "delete from animes where titulo = '" + nombre + "'";
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/anime", "root", "root");
+            Statement statement = connection.createStatement();
+            statement.execute(consulta);
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
     @FXML
-    protected void onBtnTextoClick() throws IOException {
+    protected void onBtnAnadirClick() throws IOException {
         /*ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".txt"));
         DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
         escritor.writeObject(anime);

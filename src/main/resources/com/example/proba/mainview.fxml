@@ -10,8 +10,8 @@
     </padding>
    <Label text="Introduce el nombre del anime" />
    <TextField fx:id="text1" />
-    <Button onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="34.0" text="Ok" />
-   <TableView fx:id="table1" prefHeight="200.0" prefWidth="200.0">
+    <Button fx:id="btnOk" onAction="#onBtnOkClick" prefHeight="26.0" prefWidth="34.0" text="Ok" />
+   <TableView fx:id="table1" prefHeight="250.0" prefWidth="560.0">
      <columns>
        <TableColumn fx:id="c1" prefWidth="75.0" text="Título" />
        <TableColumn fx:id="c2" prefWidth="75.0" text="Puntuación" />
@@ -21,14 +21,11 @@
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
       </columnResizePolicy>
    </TableView>
-   <Label text="Introduce el nombre del archivo que queires crear" />
-   <TextField fx:id="text2" />
-   <Pane prefHeight="100.0" prefWidth="200.0">
+   <Pane prefHeight="39.0" prefWidth="560.0">
       <children>
-         <Button fx:id="btnJson" layoutX="100.0" mnemonicParsing="false" onAction="#onBtnJsonClick" text="JSON" />
-         <Button fx:id="onBtnXmlClick" layoutX="200.0" mnemonicParsing="false" text="XML" />
-         <Button fx:id="btnBinario" layoutX="300.0" mnemonicParsing="false" onAction="#onBtnBinarioClick" text="Binario" />
-         <Button fx:id="btnTexto" layoutX="400.0" mnemonicParsing="false" onAction="#onBtnTextoClick" text="Texto" />
+         <Button fx:id="btnAnadir" layoutX="95.0" layoutY="2.0" mnemonicParsing="false" onAction="#onBtnAnadirClick" text="Añadir" />
+         <Button fx:id="btnBorrar" layoutX="256.0" mnemonicParsing="false" onAction="#onBtnBorrarClick" text="Borrar" />
+         <Button fx:id="btnExportar" layoutX="421.0" mnemonicParsing="false" onAction="#onBtnExportarClick" text="Exportar" />
       </children>
    </Pane>
 </VBox>
