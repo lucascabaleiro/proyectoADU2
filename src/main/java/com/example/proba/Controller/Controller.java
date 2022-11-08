@@ -85,13 +85,6 @@ public class Controller {
     }
     @FXML
     protected  void onBtnBorrarClick() throws  IOException {
-       /* ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".bin"));
-        DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
-        escritor.writeObject(anime);
-        escritor.close();*/
-        /*Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/viewborrar.fxml"));
-        Stage stage = (Stage) btnBorrar.getScene().getWindow();
-        stage.setScene(new Scene(root, 600, 500));*/
         try {
             Anime anime = (Anime) table1.getSelectionModel().getSelectedItem();
             String nombre = anime.getTitulo();
@@ -107,10 +100,6 @@ public class Controller {
     }
     @FXML
     protected void onBtnAnadirClick() throws IOException {
-        /*ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream(text2.getText() + ".txt"));
-        DataItem anime = (DataItem)table1.getSelectionModel().getSelectedItem();
-        escritor.writeObject(anime);
-        escritor.close();*/
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/viewanadir.fxml"));
         Stage stage = (Stage) btnAnadir.getScene().getWindow();
         stage.setScene(new Scene(root, 600, 500));
