@@ -11,5 +11,7 @@
       <TextField fx:id="textTitulo" layoutX="92.0" layoutY="40.0" prefHeight="25.0" prefWidth="331.0" />
       <TextField fx:id="textVal" layoutX="115.0" layoutY="78.0" prefHeight="25.0" prefWidth="305.0" />
       <TextField fx:id="textPop" layoutX="170.0" layoutY="120.0" prefHeight="25.0" prefWidth="252.0" />
+      <Button fx:id="bntAgregar" layoutX="50.0" layoutY="161.0" mnemonicParsing="false" onAction="#onBtnAgregarClick" text="Añadir" />
+      <Button fx:id="btnVolver" layoutX="133.0" layoutY="161.0" mnemonicParsing="false" onAction="#onBtnVolverClick" text="Volver" />
    </children>
 </AnchorPane>

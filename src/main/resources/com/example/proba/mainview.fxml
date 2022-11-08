@@ -14,7 +14,7 @@
    <TableView fx:id="table1" prefHeight="250.0" prefWidth="560.0">
      <columns>
        <TableColumn fx:id="c1" prefWidth="75.0" text="Título" />
-       <TableColumn fx:id="c2" prefWidth="75.0" text="Puntuación" />
+       <TableColumn fx:id="c2" prefWidth="75.0" text="Valoración" />
          <TableColumn fx:id="c3" prefWidth="147.0" text="Ranking popularidad" />
      </columns>
       <columnResizePolicy>

@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,9 +34,19 @@ public class Controller {
     @FXML
     private TextField text1;
     @FXML
+    private TextField textTitulo;
+    @FXML
+    private TextField textVal;
+    @FXML
+    private TextField textPop;
+    @FXML
     private Button btnAnadir;
     @FXML
     private Button btnBorrar;
+    @FXML
+    private Button btnAgregar;
+    @FXML
+    private Button btnVolver;
     @FXML
     protected void onBtnOkClick() throws IOException {
         table1.getItems().clear();
@@ -95,6 +106,32 @@ public class Controller {
         escritor.close();*/
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/viewanadir.fxml"));
         Stage stage = (Stage) btnAnadir.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 500));
+    }
+
+    @FXML
+    protected void onBtnAgregarClick(){
+        try {
+            String nombre = textTitulo.getText();
+            int popularidad = Integer.parseInt(textPop.getText());
+            float valoracion = Float.parseFloat(textVal.getText());
+            String consulta = "insert into animes values('" + nombre + "'," + valoracion + "," + popularidad + ")";
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/anime", "root", "root");
+            Statement statement = connection.createStatement();
+            statement.execute(consulta);
+            connection.close();
+            textTitulo.clear();
+            textPop.clear();
+            textVal.clear();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void onBtnVolverClick() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/mainview.fxml"));
+        Stage stage = (Stage) btnVolver.getScene().getWindow();
         stage.setScene(new Scene(root, 600, 500));
     }
 }
