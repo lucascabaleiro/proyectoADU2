@@ -38,18 +38,6 @@ public class Controller {
     private Button btnBorrar;
     @FXML
     protected void onBtnOkClick() throws IOException {
-        /*table1.getItems().clear();
-        c1.setCellValueFactory(new PropertyValueFactory<>("title"));
-        c2.setCellValueFactory(new PropertyValueFactory<>("score"));
-        c3.setCellValueFactory(new PropertyValueFactory<>("popularity"));
-        String nombre = text1.getText();
-        String url = "https://api.jikan.moe/v4/anime?q=" + nombre;
-        URL jsonURL = new URL(url);
-        ObjectMapper objectMapper = new ObjectMapper();
-        Response res = objectMapper.readValue(jsonURL, Response.class);
-        for (byte i = 0; i < res.getData().size(); i++) {
-            table1.getItems().add(res.getData().get(i));
-        }*/
         table1.getItems().clear();
         try {
             String nombre = text1.getText();
