@@ -34,6 +34,8 @@ public class Controller {
     @FXML
     private TextField text1;
     @FXML
+    private TextField text2;
+    @FXML
     private TextField textTitulo;
     @FXML
     private TextField textVal;
@@ -47,6 +49,11 @@ public class Controller {
     private Button btnAgregar;
     @FXML
     private Button btnVolver;
+    @FXML
+    private Button btnVolver2;
+    @FXML
+    private Button btnExportar;
+    Anime anime;
     @FXML
     protected void onBtnOkClick() throws IOException {
         table1.getItems().clear();
@@ -74,7 +81,10 @@ public class Controller {
         /*ObjectMapper mapper = new ObjectMapper();
         Anime anime = (Anime)table1.getSelectionModel().getSelectedItem();
         mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);*/
-
+        anime = (Anime)table1.getSelectionModel().getSelectedItem();
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/viewexportar.fxml"));
+        Stage stage = (Stage) btnExportar.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 500));
     }
     @FXML
     protected  void onBtnBorrarClick() throws  IOException {
@@ -132,6 +142,18 @@ public class Controller {
     protected void onBtnVolverClick() throws IOException{
         Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/mainview.fxml"));
         Stage stage = (Stage) btnVolver.getScene().getWindow();
+        stage.setScene(new Scene(root, 600, 500));
+    }
+    @FXML
+    protected void onBtnExportar2Click() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(Paths.get(text2.getText() + ".json").toFile(),anime);
+        text2.clear();
+    }
+    @FXML
+    protected void onBtnVolver2Click() throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/proba/mainview.fxml"));
+        Stage stage = (Stage) btnVolver2.getScene().getWindow();
         stage.setScene(new Scene(root, 600, 500));
     }
 }
