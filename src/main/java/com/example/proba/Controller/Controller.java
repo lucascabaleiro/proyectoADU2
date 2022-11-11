@@ -53,7 +53,7 @@ public class Controller {
     private Button btnVolver2;
     @FXML
     private Button btnExportar;
-    Anime anime;
+    private static Anime anime;
     @FXML
     protected void onBtnOkClick() throws IOException {
         table1.getItems().clear();
